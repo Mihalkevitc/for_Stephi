@@ -326,7 +326,7 @@
             const classCard = taskCard.className;
             const resultSpan = document.getElementById(taskCardId + '-result');
 
-            // Сохраняем введённый ответ в localStorage
+            // Сохраняем введённый ответ в localStorage (Если это не пустая строка - пользователь должен что-то ввести!)
             if(userAnswer != ''){
                 localStorage.setItem(taskId, userAnswer);
                 localStorage.setItem(taskId + '-correct', correctAnswer);
@@ -366,7 +366,7 @@
             const tasks = ['task1', 'task2', 'task3', 'mini-task1-input', 'mini-task2-input', 'mini-task3-input'];
             tasks.forEach(taskId => {
                 const savedAnswer = localStorage.getItem(taskId);
-                if (savedAnswer) {
+                if (savedAnswer && savedAnswer != '') {
                     document.getElementById(taskId).value = savedAnswer;
                 }
             });
