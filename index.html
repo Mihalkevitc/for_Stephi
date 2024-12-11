@@ -34,6 +34,26 @@
             color: #7f8c8d;
         }
 
+        .mini-task p {
+            margin-top: 3px;
+            margin-bottom: 3px;
+        }
+
+        .theory {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #ede3fd;
+            border: 7px dotted #fafafa;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .theory h3 {
+            display: inline-block;
+            color: #6964f6;
+            margin-bottom: 0;
+        }
+
         .tasks {
             margin: 0;
             padding: 0;
@@ -49,55 +69,6 @@
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .task h2 {
-            font-size: 1.5rem;
-            color: #2c3e50;
-        }
-
-        .correct {
-            background-color: #a8e6a1;
-            box-shadow: 0 0 15px rgba(85, 200, 85, 0.3);
-        }
-
-        .incorrect {
-            background-color: #f8b1b1;
-            box-shadow: 0 0 15px rgba(231, 76, 60, 0.3);
-        }
-
-        input[type="text"] {
-            padding: 12px;
-            width: 85%;
-            margin-top: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
-
-        button {
-            padding: 12px 24px;
-            background-color: #3498db;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #2980b9;
-        }
-
-        .check-button {
-            margin-top: 15px;
-        }
-
-        #result {
-            margin-top: 20px;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-
         .mini-task {
             margin-bottom: 20px;
             padding: 15px;
@@ -107,30 +78,93 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .mini-task input {
-            width: 75%;
-            padding: 10px;
-            margin-right: 10px;
+        .task h2 {
+            font-size: 1.5rem;
+            color: #2c3e50;
         }
 
-        .mini-task button {
-            display: inline-block;
-            margin-left: 15px;
-        }
-
-        .mini-task-result {
-            display: inline-block;
-            margin-left: 15px;
-            font-weight: bold;
+        input[type="text"] {
+            padding: 12px;
+            width: 85%;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
             font-size: 1rem;
         }
 
-        .correct-result {
-            color: green;
+        .mini-task input {
+            padding: 8px;
+            width: 75%;
         }
 
-        .incorrect-result {
-            color: red;
+        button {
+            padding: 12px 24px;
+
+            margin-top: 10px;
+            background-color: #6964f6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .note {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* для верных карточек */
+
+        .correct {
+            background-color: #a3f79c;
+            box-shadow: 0 0 15px rgba(85, 200, 85, 0.3);
+        }
+
+        .correct p {
+            color: #ffffff;
+        }
+
+        .mini-task.correct
+        {
+            color: #7f8c8d;
+            background-color: #ffffff;
+        }
+
+        .mini-task.correct input{
+            background-color: #a3f79c;
+            box-shadow: 0 0 15px rgba(85, 200, 85, 0.3);
+        }
+        
+        .mini-task.correct  p{
+            color: #7f8c8d;
+        }
+
+
+        /* для неверных карточек */
+
+        .incorrect {
+            background-color: #f88686;
+            box-shadow: 0 0 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .mini-task.incorrect
+        {
+            background-color: #ffffff;
+        }
+
+        .mini-task.incorrect input{
+            background-color: #f88686;
+            box-shadow: 0 0 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .incorrect p{
+            color: rgb(255, 255, 255);
+        }
+
+        .mini-task.incorrect p {
+            color: #7f8c8d;
         }
 
         @media (max-width: 768px) {
@@ -148,6 +182,7 @@
             }
 
             .mini-task input {
+                padding: 8px;
                 width: 65%;
             }
 
@@ -158,11 +193,68 @@
     </style>
 </head>
 <body>
+
+<div class="container">
+
+    <header>
+        <h1>Математика для 7 класса: Степени и Многочлены</h1>
+        <p>Потренируйся решать задания, и ты станешь настоящим математическим чемпионом!</p>
+    </header>
+
+
+    <!-- Теоретические карточки -->
+    <section class="theory">
+        <h1>Возведение в степень</h1>
+        <p><h3>Возведение в степень</h3> — это операция, когда число (основание) умножается само на себя несколько раз. Это записывается как <em>a<sup>n</sup></em>, где:</p>
+        <ul>
+            <li><strong>a</strong> — основание степени;</li>
+            <li><strong>n</strong> — показатель степени.</li>
+        </ul>
+        <p><strong><h3>Основные правила:</h3></strong></p>
+        <ul>
+            <li><h2>a<sup>m</sup> × a<sup>n</sup> = a<sup>m+n</sup></h2></li>
+            <li><h2>(a<sup>m</sup>)<sup>n</sup> = a<sup>m×n</sup></h2></li>
+            <li><h2>a<sup>m</sup> ÷ a<sup>n</sup> = a<sup>m−n</sup></h2></li>
+            <li><h2>a<sup>0</sup> = 1 (если a ≠ 0) </h2></li> 
+            <li><h2>a<sup>−n</sup> = 1/a<sup>n</sup></h2></li>
+        </ul>
+        <p><strong>Пример:</strong> 2<sup>3</sup> = 2 × 2 × 2 = 8</p>
+        <p><strong><h3>Особенности:</h3></strong></p>
+        <ul>
+            <li><strong>1 в степени:</strong> 1<sup>n</sup> = 1 для любого n</li>
+            <li><strong>0 в степени:</strong> 0<sup>n</sup> = 0 для любого положительного n</li>
+            <li><strong>Отрицательные показатели:</strong> a<sup>−n</sup> = 1/a<sup>n</sup>, если a ≠ 0</li>
+        </ul>
+    </section>
+    
+    
+
+    <section class="theory">
+        <h1>Многочлены</h1>
+        <p><h3>Многочлен</h3> — это алгебраическое выражение, состоящее из переменных, коэффициентов и операций сложения, вычитания, умножения и возведения в степень.</p>
+        <p><strong>Пример:</strong> 3x<sup>2</sup> + 2x - 5</p>
+    
+        <p><strong><h3>Основные действия с многочленами:</h3></strong></p>
+        <ul>
+            <li><strong>Сложение:</strong> Складываем подобные слагаемые. <br>Пример: 
+                (3x<sup>2</sup> + 2x) + (4x<sup>2</sup> - x) = 3x<sup>2</sup> + 2x + 4x<sup>2</sup> - x = 7x<sup>2</sup> + x.
+            </li>
+            <li><strong>Вычитание:</strong> Вычитаем одноимённые слагаемые. <br>Пример: 
+                (5x<sup>2</sup> - 3x + y) - (2x<sup>2</sup> + x + y<sup>2</sup>) = 5x<sup>2</sup> - 3x + y - 2x<sup>2</sup> - x - y<sup>2</sup>= 3x<sup>2</sup> - 4x - y<sup>2</sup> + y
+            </li>
+            <li><strong>Умножение:</strong> Используем распределительный закон для умножения. Пример: 
+                (x + 3)(x - 2) = x<sup>2</sup> - 2x + 3x - 6 = x<sup>2</sup> + x - 6.
+            </li>
+        </ul>
+    </section>
+    
+
+</div>
+
+
+        <!-- Задания -->
     <div class="container">
-        <header>
-            <h1>Математика для 7 класса: Степени и Многочлены</h1>
-            <p>Потренируйся решать задания, и ты станешь настоящим математическим гением!</p>
-        </header>
+
 
         <section class="tasks">
             <!-- Большие задания -->
@@ -170,21 +262,21 @@
                 <h2>Задание 1: Упростите выражение</h2>
                 <p>Упростите: 2<sup>3</sup> * 2<sup>4</sup></p>
                 <input type="text" id="task1" placeholder="Введите ответ" />
-                <button class="check-button" onclick="checkAnswer('task1', '128', 'task1-card')">Проверить</button>
+                <button class="check-button" id="check-task1">Проверить</button>
             </div>
 
             <div class="task" id="task2-card">
                 <h2>Задание 2: Сложение многочленов</h2>
                 <p>Упростите выражение: (3x + 5) + (4x - 2)</p>
                 <input type="text" id="task2" placeholder="Введите ответ" />
-                <button class="check-button" onclick="checkAnswer('task2', '7x + 3', 'task2-card')">Проверить</button>
+                <button class="check-button" id="check-task2">Проверить</button>
             </div>
 
             <div class="task" id="task3-card">
                 <h2>Задание 3: Вычитание многочленов</h2>
                 <p>Упростите выражение: (5x<sup>2</sup> + 3x - 1) - (2x<sup>2</sup> - 4x + 3)</p>
                 <input type="text" id="task3" placeholder="Введите ответ" />
-                <button class="check-button" onclick="checkAnswer('task3', '3x^2 + 7x - 4', 'task3-card')">Проверить</button>
+                <button class="check-button" id="check-task3">Проверить</button>
             </div>
 
             <!-- Карточка с несколькими маленькими примерами -->
@@ -195,7 +287,7 @@
                 <div class="mini-task" id="mini-task1">
                     <p>2<sup>2</sup> * 2<sup>3</sup> = </p>
                     <input type="text" id="mini-task1-input" placeholder="Введите ответ" />
-                    <button class="check-button" onclick="checkMiniTaskAnswer('mini-task1-input', '32', 'mini-task1')">Проверить</button>
+                    <button class="check-button" id="check-mini-task1">Проверить</button>
                     <span class="mini-task-result" id="mini-task1-result"></span>
                 </div>
 
@@ -203,7 +295,7 @@
                 <div class="mini-task" id="mini-task2">
                     <p>(4x + 1) + (2x - 3) = </p>
                     <input type="text" id="mini-task2-input" placeholder="Введите ответ" />
-                    <button class="check-button" onclick="checkMiniTaskAnswer('mini-task2-input', '6x - 2', 'mini-task2')">Проверить</button>
+                    <button class="check-button" id="check-mini-task2">Проверить</button>
                     <span class="mini-task-result" id="mini-task2-result"></span>
                 </div>
 
@@ -211,11 +303,19 @@
                 <div class="mini-task" id="mini-task3">
                     <p>(x<sup>2</sup> + 3x - 1) - (x<sup>2</sup> - 4x + 5) = </p>
                     <input type="text" id="mini-task3-input" placeholder="Введите ответ" />
-                    <button class="check-button" onclick="checkMiniTaskAnswer('mini-task3-input', '7x - 6', 'mini-task3')">Проверить</button>
+                    <button class="check-button" id="check-mini-task3">Проверить</button>
                     <span class="mini-task-result" id="mini-task3-result"></span>
                 </div>
             </div>
         </section>
+
+
+    </div>
+
+    <div class="note">
+        <p>Задание для Стефи!</p>
+        <hr>
+        <p><strong>© Михалькевич Влад</strong> 2024</p>
     </div>
 
     <script>
@@ -223,118 +323,73 @@
         function checkAnswer(taskId, correctAnswer, taskCardId) {
             const userAnswer = document.getElementById(taskId).value.trim();
             const taskCard = document.getElementById(taskCardId);
+            const classCard = taskCard.className;
             const resultSpan = document.getElementById(taskCardId + '-result');
 
             // Сохраняем введённый ответ в localStorage
-            localStorage.setItem(taskId, userAnswer);
-            localStorage.setItem(taskId + '-correct', correctAnswer);
+            if(userAnswer != ''){
+                localStorage.setItem(taskId, userAnswer);
+                localStorage.setItem(taskId + '-correct', correctAnswer);
+            }
 
             // Проверка правильности ответа
             if (userAnswer === correctAnswer) {
                 taskCard.classList.add('correct');
                 taskCard.classList.remove('incorrect');
-                resultSpan.textContent = '✔️';
-                resultSpan.classList.add('correct-result');
-                resultSpan.classList.remove('incorrect-result');
+                if (classCard === 'mini-task') {
+                    resultSpan.textContent = '✔️';
+                    resultSpan.classList.add('correct-result');
+                    resultSpan.classList.remove('incorrect-result');
+                }
             } else {
                 taskCard.classList.remove('correct');
                 taskCard.classList.add('incorrect');
-                resultSpan.textContent = '❌';
-                resultSpan.classList.add('incorrect-result');
-                resultSpan.classList.remove('correct-result');
+                if (classCard === 'mini-task') {
+                    resultSpan.textContent = '❌';
+                    resultSpan.classList.add('incorrect-result');
+                    resultSpan.classList.remove('correct-result');
+                }
             }
         }
 
-        // Функция для проверки ответа на мини-задание
-        function checkMiniTaskAnswer(taskId, correctAnswer, taskCardId) {
-            const miniTaskCard = document.getElementById(taskCardId);
-            const inputField = document.getElementById(taskId);
-            const userAnswer = inputField.value.trim();
-            const resultSpan = document.getElementById(taskCardId + '-result');
+        // Привязка событий к кнопкам
+        document.getElementById("check-task1").addEventListener("click", () => checkAnswer('task1', '128', 'task1-card'));
+        document.getElementById("check-task2").addEventListener("click", () => checkAnswer('task2', '7x + 3', 'task2-card'));
+        document.getElementById("check-task3").addEventListener("click", () => checkAnswer('task3', '3x^2 + 7x - 4', 'task3-card'));
 
-            // Сохраняем ответ в localStorage
-            localStorage.setItem(taskId + '-input', userAnswer);
+        document.getElementById("check-mini-task1").addEventListener("click", () => checkAnswer('mini-task1-input', '32', 'mini-task1'));
+        document.getElementById("check-mini-task2").addEventListener("click", () => checkAnswer('mini-task2-input', '6x - 2', 'mini-task2'));
+        document.getElementById("check-mini-task3").addEventListener("click", () => checkAnswer('mini-task3-input', '7x - 6', 'mini-task3'));
 
-            if (userAnswer === correctAnswer) {
-                resultSpan.textContent = '✔️';
-                resultSpan.classList.add('correct-result');
-                resultSpan.classList.remove('incorrect-result');
-
-                miniTaskCard.classList.add('correct');
-                miniTaskCard.classList.remove('incorrect');
-
-                inputField.classList.add('correct');
-                inputField.classList.remove('incorrect');
-
-                localStorage.setItem(taskCardId + '-status', 'correct');
-            } else {
-                resultSpan.textContent = '❌';
-                resultSpan.classList.add('incorrect-result');
-                resultSpan.classList.remove('correct-result');
-
-                miniTaskCard.classList.add('incorrect');
-                miniTaskCard.classList.remove('correct');
-
-                inputField.classList.add('incorrect');
-                inputField.classList.remove('correct');
-
-                localStorage.setItem(taskCardId + '-status', 'incorrect');
-            }
+        // Функция для загрузки предыдущих ответов из localStorage
+        function loadPreviousAnswers() {
+            const tasks = ['task1', 'task2', 'task3', 'mini-task1-input', 'mini-task2-input', 'mini-task3-input'];
+            tasks.forEach(taskId => {
+                const savedAnswer = localStorage.getItem(taskId);
+                if (savedAnswer) {
+                    document.getElementById(taskId).value = savedAnswer;
+                }
+            });
         }
 
-        window.onload = function() {
-    const taskIds = ['task1', 'task2', 'task3'];
-    taskIds.forEach(taskId => {
-        const savedAnswer = localStorage.getItem(taskId);
-        if (savedAnswer) {
-            document.getElementById(taskId).value = savedAnswer;
-            const taskCard = document.getElementById(taskId + '-card');
-            const savedStatus = localStorage.getItem(taskId + '-card');
-            
-            // Применяем состояние правильности карточки
-            if (savedStatus === 'correct') {
-                taskCard.classList.add('correct');
-                taskCard.classList.remove('incorrect');
-            } else if (savedStatus === 'incorrect') {
-                taskCard.classList.add('incorrect');
-                taskCard.classList.remove('correct');
-            }
+        loadPreviousAnswers();
+
+        // Функция для проверки всех заданий при загрузке страницы
+        function checkAllAnswers() {
+            checkAnswer('task1', '128', 'task1-card');
+            checkAnswer('task2', '7x + 3', 'task2-card');
+            checkAnswer('task3', '3x^2 + 7x - 4', 'task3-card');
+            checkAnswer('mini-task1-input', '32', 'mini-task1');
+            checkAnswer('mini-task2-input', '6x - 2', 'mini-task2');
+            checkAnswer('mini-task3-input', '7x - 6', 'mini-task3');
         }
-    });
 
-    const miniTaskIds = ['mini-task1', 'mini-task2', 'mini-task3'];
-    miniTaskIds.forEach(taskId => {
-        const savedAnswer = localStorage.getItem(taskId + '-input');
-        const savedStatus = localStorage.getItem(taskId + '-status');
-        const resultSpan = document.getElementById(taskId + '-result');
-        const miniTaskCard = document.getElementById(taskId);
-        const inputField = document.getElementById(taskId + '-input');
+        // Загрузка предыдущих ответов при загрузке страницы и проверка
 
-        if (savedAnswer) {
-            inputField.value = savedAnswer;
-
-            // Применяем статус мини-задания
-            if (savedStatus === 'correct') {
-                resultSpan.textContent = '✔️';
-                resultSpan.classList.add('correct-result');
-                resultSpan.classList.remove('incorrect-result');
-                miniTaskCard.classList.add('correct');
-                miniTaskCard.classList.remove('incorrect');
-                inputField.classList.add('correct');
-                inputField.classList.remove('incorrect');
-            } else if (savedStatus === 'incorrect') {
-                resultSpan.textContent = '❌';
-                resultSpan.classList.add('incorrect-result');
-                resultSpan.classList.remove('correct-result');
-                miniTaskCard.classList.add('incorrect');
-                miniTaskCard.classList.remove('correct');
-                inputField.classList.add('incorrect');
-                inputField.classList.remove('correct');
-            }
-        }
-    });
-};
-
+        window.onload = function () {
+                loadPreviousAnswers();
+                checkAllAnswers(); // Проверка всех заданий после загрузки
+        };
     </script>
 </body>
 </html>
