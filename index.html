@@ -38,11 +38,22 @@
             background-color: #ffffff;
             border: 1px solid #ccc;
             border-radius: 5px;
+            transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+        }
+
+        .correct {
+            background-color: #a8e6a1;
+            box-shadow: 0 0 10px rgba(85, 200, 85, 0.4);
+        }
+
+        .incorrect {
+            background-color: #f8b1b1;
+            box-shadow: 0 0 10px rgba(231, 76, 60, 0.4);
         }
 
         input[type="text"] {
             padding: 10px;
-            width: 100%;
+            width: 95%;
             margin-top: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
@@ -66,6 +77,42 @@
             font-size: 18px;
             font-weight: bold;
         }
+
+        .check-button {
+            margin-top: 10px;
+        }
+
+        .mini-task {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .mini-task input {
+            width: 80%;
+            display: inline-block;
+        }
+
+        .mini-task button {
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        .mini-task-result {
+            display: inline-block;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+
+        .correct-result {
+            color: green;
+        }
+
+        .incorrect-result {
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -76,71 +123,217 @@
         </header>
 
         <section class="tasks">
-            <div class="task">
+            <!-- Большие задания -->
+            <div class="task" id="task1-card">
                 <h2>Задание 1: Упростите выражение</h2>
                 <p>Упростите: 2<sup>3</sup> * 2<sup>4</sup></p>
-                <input type="text" id="task1" placeholder="Введите ответ">
+                <input type="text" id="task1" placeholder="Введите ответ" value="" />
+                <button class="check-button" onclick="checkAnswer('task1', '128', 'task1-card')">Проверить</button>
             </div>
-            <div class="task">
+
+            <div class="task" id="task2-card">
                 <h2>Задание 2: Сложение многочленов</h2>
                 <p>Упростите выражение: (3x + 5) + (4x - 2)</p>
-                <input type="text" id="task2" placeholder="Введите ответ">
+                <input type="text" id="task2" placeholder="Введите ответ" value="" />
+                <button class="check-button" onclick="checkAnswer('task2', '7x + 3', 'task2-card')">Проверить</button>
             </div>
-            <div class="task">
+
+            <div class="task" id="task3-card">
                 <h2>Задание 3: Вычитание многочленов</h2>
                 <p>Упростите выражение: (5x^2 + 3x - 1) - (2x^2 - 4x + 3)</p>
-                <input type="text" id="task3" placeholder="Введите ответ">
+                <input type="text" id="task3" placeholder="Введите ответ" value="" />
+                <button class="check-button" onclick="checkAnswer('task3', '3x^2 + 7x - 4', 'task3-card')">Проверить</button>
             </div>
-            <button onclick="checkAnswers()">Проверить ответы</button>
-            <div id="result"></div>
+
+            <!-- Карточка с несколькими маленькими примерами -->
+            <div class="task" id="mini-task-card">
+                <h2>Задания на практику: Упрощение</h2>
+
+                <!-- Пример 1 -->
+                <div class="mini-task" id="mini-task1">
+                    <p>2<sup>2</sup> * 2<sup>3</sup> = </p>
+                    <input type="text" id="mini-task1-input" placeholder="Введите ответ" value="" />
+                    <button class="check-button" onclick="checkMiniTaskAnswer('mini-task1-input', '32', 'mini-task1')">Проверить</button>
+                    <span class="mini-task-result" id="mini-task1-result"></span>
+                </div>
+
+                <!-- Пример 2 -->
+                <div class="mini-task" id="mini-task2">
+                    <p>(4x + 1) + (2x - 3) = </p>
+                    <input type="text" id="mini-task2-input" placeholder="Введите ответ" value="" />
+                    <button class="check-button" onclick="checkMiniTaskAnswer('mini-task2-input', '6x - 2', 'mini-task2')">Проверить</button>
+                    <span class="mini-task-result" id="mini-task2-result"></span>
+                </div>
+
+                <!-- Пример 3 -->
+                <div class="mini-task" id="mini-task3">
+                    <p>(x^2 + 3x - 1) - (x^2 - 4x + 5) = </p>
+                    <input type="text" id="mini-task3-input" placeholder="Введите ответ" value="" />
+                    <button class="check-button" onclick="checkMiniTaskAnswer('mini-task3-input', '7x - 6', 'mini-task3')">Проверить</button>
+                    <span class="mini-task-result" id="mini-task3-result"></span>
+                </div>
+            </div>
         </section>
     </div>
 
     <script>
-        function checkAnswers() {
-            let score = 0;
-            let resultText = '';
+        // Функция для проверки ответа на конкретное задание
+        function checkAnswer(taskId, correctAnswer, taskCardId) {
+            const userAnswer = document.getElementById(taskId).value.trim();
+            const taskCard = document.getElementById(taskCardId);
+            const resultSpan = document.getElementById(taskCardId + '-result');
 
-            // Ответы для проверки
-            const answers = {
-                task1: '128',
-                task2: '7x + 3',
-                task3: '3x^2 + 7x - 4'
-            };
+            // Сохраняем ответ в localStorage
+            localStorage.setItem(taskId, userAnswer);
 
-            // Получаем введенные ответы
-            const task1Answer = document.getElementById('task1').value.trim();
-            const task2Answer = document.getElementById('task2').value.trim();
-            const task3Answer = document.getElementById('task3').value.trim();
-
-            // Проверка каждого ответа
-            if (task1Answer === answers.task1) {
-                score++;
+            // Проверка правильности ответа
+            if (userAnswer === correctAnswer) {
+                taskCard.classList.add('correct');
+                taskCard.classList.remove('incorrect');
+                resultSpan.textContent = '✔️';
+                resultSpan.classList.add('correct-result');
+                resultSpan.classList.remove('incorrect-result');
+                localStorage.setItem(taskCardId, 'correct');
             } else {
-                resultText += 'Задание 1: Неправильно! Правильный ответ: 2^3 * 2^4 = 128\n';
+                taskCard.classList.remove('correct');
+                taskCard.classList.add('incorrect');
+                resultSpan.textContent = '❌';
+                resultSpan.classList.add('incorrect-result');
+                resultSpan.classList.remove('correct-result');
+                localStorage.setItem(taskCardId, 'incorrect');
             }
-
-            if (task2Answer === answers.task2) {
-                score++;
-            } else {
-                resultText += 'Задание 2: Неправильно! Правильный ответ: 7x + 3\n';
-            }
-
-            if (task3Answer === answers.task3) {
-                score++;
-            } else {
-                resultText += 'Задание 3: Неправильно! Правильный ответ: 3x^2 + 7x - 4\n';
-            }
-
-            // Выводим результат
-            if (score === 3) {
-                resultText = 'Поздравляем! Все ответы верны!';
-            } else {
-                resultText += `Вы набрали ${score} из 3 правильных ответов.`;
-            }
-
-            document.getElementById('result').innerText = resultText;
         }
+
+        // Функция для проверки ответа на мини-задание
+        function checkMiniTaskAnswer(taskId, correctAnswer, taskCardId) {
+            // Получаем саму карточку мини-задания
+            const miniTaskCard = document.getElementById(taskCardId);
+            const inputField = document.getElementById(taskId);
+
+            const userAnswer = document.getElementById(taskId).value.trim();
+            const resultSpan = document.getElementById(taskCardId + '-result');
+
+            // Сохраняем ответ в localStorage
+            localStorage.setItem(taskId, userAnswer);
+
+            if (userAnswer === correctAnswer) {
+                resultSpan.textContent = '✔️';
+                resultSpan.classList.add('correct-result');
+                resultSpan.classList.remove('incorrect-result');
+
+                inputField.classList.add('correct');
+                inputField.classList.remove('incorrect');
+
+                // Можем добавить класс для самой карточки
+                miniTaskCard.classList.add('correct');
+                miniTaskCard.classList.remove('incorrect');
+
+                localStorage.setItem(taskCardId, 'correct');
+            } else {
+                resultSpan.textContent = '❌';
+                resultSpan.classList.add('incorrect-result');
+                resultSpan.classList.remove('correct-result');
+
+                inputField.classList.add('incorrect');
+                inputField.classList.remove('correct');
+
+                // Можем добавить класс для самой карточки
+                miniTaskCard.classList.add('incorrect');
+                miniTaskCard.classList.remove('correct');
+
+                localStorage.setItem(taskCardId, 'incorrect');
+            }
+
+            checkIfAllMiniTasksCorrect();
+        }
+
+        // Функция для проверки всех мини-заданий
+        function checkIfAllMiniTasksCorrect() {
+            const miniTaskIds = ['mini-task1', 'mini-task2', 'mini-task3'];
+            const taskCard = document.getElementById('mini-task-card');
+
+            // Проверим все мини-задания
+            const allCorrect = miniTaskIds.every(taskId => {
+                const savedStatus = localStorage.getItem(taskId);
+                return savedStatus === 'correct';  // Все мини-задания должны быть правильными
+            });
+
+            // Если все мини-задания правильные, то сделаем карточку зеленой
+            if (allCorrect) {
+                taskCard.classList.add('correct');
+                taskCard.classList.remove('incorrect');
+            } else {
+                taskCard.classList.remove('correct');
+            }
+        }
+
+        // Восстановление состояния после перезагрузки страницы
+        window.onload = function() {
+            const taskIds = ['task1', 'task2', 'task3'];
+            taskIds.forEach(taskId => {
+                const savedAnswer = localStorage.getItem(taskId);
+                if (savedAnswer) {
+                    document.getElementById(taskId).value = savedAnswer;
+                    const taskCard = document.getElementById(taskId + '-card');
+                    const savedStatus = localStorage.getItem(taskId + '-card');
+                    if (savedStatus === 'correct') {
+                        taskCard.classList.add('correct');
+                        taskCard.classList.remove('incorrect');
+                    } else if (savedStatus === 'incorrect') {
+                        taskCard.classList.add('incorrect');
+                        taskCard.classList.remove('correct');
+                    }
+                }
+            });
+
+            const miniTaskIds = ['mini-task1', 'mini-task2', 'mini-task3'];
+            miniTaskIds.forEach(taskId => {
+                // Получаем сохранённый ответ
+                const savedAnswer = localStorage.getItem(taskId + '-input');
+                if (savedAnswer) {
+                    // Устанавливаем сохранённый ответ в поле ввода
+                    document.getElementById(taskId + '-input').value = savedAnswer;
+
+                    // Получаем элемент результата (для галочки или крестика)
+                    const resultSpan = document.getElementById(taskId + '-result');
+                    
+                    // Получаем саму карточку мини-задания
+                    const miniTaskCard = document.getElementById(taskId);
+                    const inputField = document.getElementById(taskId + '-input');
+
+                    // Проверяем сохранённый статус (правильный или неправильный ответ)
+                    const savedStatus = localStorage.getItem(taskId);
+                    if (savedStatus === 'correct') {
+                        resultSpan.textContent = '✔️';  // Показать галочку
+                        resultSpan.classList.add('correct-result');
+                        resultSpan.classList.remove('incorrect-result');
+
+                        
+                        // Можем добавить класс для самой карточки
+                        miniTaskCard.classList.add('correct');
+                        miniTaskCard.classList.remove('incorrect');
+
+                        inputField.classList.add('correct');
+                        inputField.classList.remove('incorrect');
+                    } else if (savedStatus === 'incorrect') {
+                        resultSpan.textContent = '❌';  // Показать крестик
+                        resultSpan.classList.add('incorrect-result');
+                        resultSpan.classList.remove('correct-result');
+
+                        
+                        // Можем добавить класс для самой карточки
+                        miniTaskCard.classList.add('incorrect');
+                        miniTaskCard.classList.remove('correct');
+
+                        inputField.classList.add('incorrect');
+                        inputField.classList.remove('correct');
+                    }
+                }
+
+                checkIfAllMiniTasksCorrect();
+            });
+
+        };
     </script>
 </body>
 </html>
