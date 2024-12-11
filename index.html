@@ -140,7 +140,7 @@
 
             <div class="task" id="task3-card">
                 <h2>Задание 3: Вычитание многочленов</h2>
-                <p>Упростите выражение: (5x^2 + 3x - 1) - (2x^2 - 4x + 3)</p>
+                <p>Упростите выражение: (5x<sup>2</sup> + 3x - 1) - (2x<sup>2</sup> - 4x + 3)</p>
                 <input type="text" id="task3" placeholder="Введите ответ" value="" />
                 <button class="check-button" onclick="checkAnswer('task3', '3x^2 + 7x - 4', 'task3-card')">Проверить</button>
             </div>
@@ -167,7 +167,7 @@
 
                 <!-- Пример 3 -->
                 <div class="mini-task" id="mini-task3">
-                    <p>(x^2 + 3x - 1) - (x^2 - 4x + 5) = </p>
+                    <p>(x<sup>2</sup> + 3x - 1) - (x<sup>2</sup> - 4x + 5) = </p>
                     <input type="text" id="mini-task3-input" placeholder="Введите ответ" value="" />
                     <button class="check-button" onclick="checkMiniTaskAnswer('mini-task3-input', '7x - 6', 'mini-task3')">Проверить</button>
                     <span class="mini-task-result" id="mini-task3-result"></span>
@@ -193,6 +193,7 @@
                 resultSpan.textContent = '✔️';
                 resultSpan.classList.add('correct-result');
                 resultSpan.classList.remove('incorrect-result');
+
                 localStorage.setItem(taskCardId, 'correct');
             } else {
                 taskCard.classList.remove('correct');
@@ -204,72 +205,48 @@
             }
         }
 
-        // Функция для проверки ответа на мини-задание
-        function checkMiniTaskAnswer(taskId, correctAnswer, taskCardId) {
-            // Получаем саму карточку мини-задания
-            const miniTaskCard = document.getElementById(taskCardId);
-            const inputField = document.getElementById(taskId);
+// Функция для проверки ответа на мини-задание
+function checkMiniTaskAnswer(taskId, correctAnswer, taskCardId) {
+    const miniTaskCard = document.getElementById(taskCardId);
+    const inputField = document.getElementById(taskId);
+    const userAnswer = inputField.value.trim();
+    const resultSpan = document.getElementById(taskCardId + '-result');
 
-            const userAnswer = document.getElementById(taskId).value.trim();
-            const resultSpan = document.getElementById(taskCardId + '-result');
+    // Сохраняем ответ в localStorage
+    localStorage.setItem(taskId + '-input', userAnswer);
 
-            // Сохраняем ответ в localStorage
-            localStorage.setItem(taskId, userAnswer);
+    if (userAnswer === correctAnswer) {
+        resultSpan.textContent = '✔️';
+        resultSpan.classList.add('correct-result');
+        resultSpan.classList.remove('incorrect-result');
 
-            if (userAnswer === correctAnswer) {
-                resultSpan.textContent = '✔️';
-                resultSpan.classList.add('correct-result');
-                resultSpan.classList.remove('incorrect-result');
+        miniTaskCard.classList.add('correct');
+        miniTaskCard.classList.remove('incorrect');
 
-                inputField.classList.add('correct');
-                inputField.classList.remove('incorrect');
+        inputField.classList.add('correct');
+        inputField.classList.remove('incorrect');
 
-                // Можем добавить класс для самой карточки
-                miniTaskCard.classList.add('correct');
-                miniTaskCard.classList.remove('incorrect');
+        localStorage.setItem(taskCardId + '-status', 'correct');
+    } else {
+        resultSpan.textContent = '❌';
+        resultSpan.classList.add('incorrect-result');
+        resultSpan.classList.remove('correct-result');
 
-                localStorage.setItem(taskCardId, 'correct');
-            } else {
-                resultSpan.textContent = '❌';
-                resultSpan.classList.add('incorrect-result');
-                resultSpan.classList.remove('correct-result');
+        miniTaskCard.classList.add('incorrect');
+        miniTaskCard.classList.remove('correct');
 
-                inputField.classList.add('incorrect');
-                inputField.classList.remove('correct');
+        inputField.classList.add('incorrect');
+        inputField.classList.remove('correct');
 
-                // Можем добавить класс для самой карточки
-                miniTaskCard.classList.add('incorrect');
-                miniTaskCard.classList.remove('correct');
+        localStorage.setItem(taskCardId + '-status', 'incorrect');
+    }
 
-                localStorage.setItem(taskCardId, 'incorrect');
-            }
+    // checkIfAllMiniTasksCorrect();
+}
 
-            checkIfAllMiniTasksCorrect();
-        }
-
-        // Функция для проверки всех мини-заданий
-        function checkIfAllMiniTasksCorrect() {
-            const miniTaskIds = ['mini-task1', 'mini-task2', 'mini-task3'];
-            const taskCard = document.getElementById('mini-task-card');
-
-            // Проверим все мини-задания
-            const allCorrect = miniTaskIds.every(taskId => {
-                const savedStatus = localStorage.getItem(taskId);
-                return savedStatus === 'correct';  // Все мини-задания должны быть правильными
-            });
-
-            // Если все мини-задания правильные, то сделаем карточку зеленой
-            if (allCorrect) {
-                taskCard.classList.add('correct');
-                taskCard.classList.remove('incorrect');
-            } else {
-                taskCard.classList.remove('correct');
-            }
-        }
-
-        // Восстановление состояния после перезагрузки страницы
-        window.onload = function() {
-            const taskIds = ['task1', 'task2', 'task3'];
+// Функция для загрузки состояния
+window.onload = function() {
+    const taskIds = ['task1', 'task2', 'task3'];
             taskIds.forEach(taskId => {
                 const savedAnswer = localStorage.getItem(taskId);
                 if (savedAnswer) {
@@ -286,54 +263,60 @@
                 }
             });
 
-            const miniTaskIds = ['mini-task1', 'mini-task2', 'mini-task3'];
-            miniTaskIds.forEach(taskId => {
-                // Получаем сохранённый ответ
-                const savedAnswer = localStorage.getItem(taskId + '-input');
-                if (savedAnswer) {
-                    // Устанавливаем сохранённый ответ в поле ввода
-                    document.getElementById(taskId + '-input').value = savedAnswer;
+    const miniTaskIds = ['mini-task1', 'mini-task2', 'mini-task3'];
+    miniTaskIds.forEach(taskId => {
+        const savedAnswer = localStorage.getItem(taskId + '-input');
+        const savedStatus = localStorage.getItem(taskId + '-status');
+        const resultSpan = document.getElementById(taskId + '-result');
+        const miniTaskCard = document.getElementById(taskId);
+        const inputField = document.getElementById(taskId + '-input');
 
-                    // Получаем элемент результата (для галочки или крестика)
-                    const resultSpan = document.getElementById(taskId + '-result');
-                    
-                    // Получаем саму карточку мини-задания
-                    const miniTaskCard = document.getElementById(taskId);
-                    const inputField = document.getElementById(taskId + '-input');
+        if (savedAnswer) {
+            inputField.value = savedAnswer;
 
-                    // Проверяем сохранённый статус (правильный или неправильный ответ)
-                    const savedStatus = localStorage.getItem(taskId);
-                    if (savedStatus === 'correct') {
-                        resultSpan.textContent = '✔️';  // Показать галочку
-                        resultSpan.classList.add('correct-result');
-                        resultSpan.classList.remove('incorrect-result');
+            if (savedStatus === 'correct') {
+                resultSpan.textContent = '✔️';
+                resultSpan.classList.add('correct-result');
+                resultSpan.classList.remove('incorrect-result');
+                miniTaskCard.classList.add('correct');
+                miniTaskCard.classList.remove('incorrect');
+                inputField.classList.add('correct');
+                inputField.classList.remove('incorrect');
+            } else if (savedStatus === 'incorrect') {
+                resultSpan.textContent = '❌';
+                resultSpan.classList.add('incorrect-result');
+                resultSpan.classList.remove('correct-result');
+                miniTaskCard.classList.add('incorrect');
+                miniTaskCard.classList.remove('correct');
+                inputField.classList.add('incorrect');
+                inputField.classList.remove('correct');
+            }
+        }
+        // checkIfAllMiniTasksCorrect();
+    });
+};
 
-                        
-                        // Можем добавить класс для самой карточки
-                        miniTaskCard.classList.add('correct');
-                        miniTaskCard.classList.remove('incorrect');
+        // // Функция для проверки всех мини-заданий
+        // function checkIfAllMiniTasksCorrect() {
+        //     const miniTaskIds = ['mini-task1', 'mini-task2', 'mini-task3'];
+        //     const taskCard = document.getElementById('mini-task-card');
 
-                        inputField.classList.add('correct');
-                        inputField.classList.remove('incorrect');
-                    } else if (savedStatus === 'incorrect') {
-                        resultSpan.textContent = '❌';  // Показать крестик
-                        resultSpan.classList.add('incorrect-result');
-                        resultSpan.classList.remove('correct-result');
+        //     // Проверим все мини-задания
+        //     const allCorrect = miniTaskIds.every(taskId => {
+        //         const savedStatus = localStorage.getItem(taskId);
+        //         return savedStatus === 'correct';  // Все мини-задания должны быть правильными
+        //     });
 
-                        
-                        // Можем добавить класс для самой карточки
-                        miniTaskCard.classList.add('incorrect');
-                        miniTaskCard.classList.remove('correct');
+        //     // Если все мини-задания правильные, то сделаем карточку зеленой
+        //     if (allCorrect) {
+        //         taskCard.classList.add('correct');
+        //         taskCard.classList.remove('incorrect');
+        //     } else {
+        //         taskCard.classList.remove('correct');
+        //         taskCard.classList.add('incorrect');
+        //     }
+        // }
 
-                        inputField.classList.add('incorrect');
-                        inputField.classList.remove('correct');
-                    }
-                }
-
-                checkIfAllMiniTasksCorrect();
-            });
-
-        };
     </script>
 </body>
 </html>
