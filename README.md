@@ -1,3 +1,3 @@
 (*≧▽≦)🎄✨
 
-Скачай файл с названием Homework_for_Christmas.html
+Перейди по ссылке: https://mihalkevitc.github.io/for_Stephi/
