@@ -247,21 +247,23 @@ function checkMiniTaskAnswer(taskId, correctAnswer, taskCardId) {
 // Функция для загрузки состояния
 window.onload = function() {
     const taskIds = ['task1', 'task2', 'task3'];
-            taskIds.forEach(taskId => {
-                const savedAnswer = localStorage.getItem(taskId);
-                if (savedAnswer) {
-                    document.getElementById(taskId).value = savedAnswer;
-                    const taskCard = document.getElementById(taskId + '-card');
-                    const savedStatus = localStorage.getItem(taskId + '-card');
-                    if (savedStatus === 'correct') {
-                        taskCard.classList.add('correct');
-                        taskCard.classList.remove('incorrect');
-                    } else if (savedStatus === 'incorrect') {
-                        taskCard.classList.add('incorrect');
-                        taskCard.classList.remove('correct');
-                    }
-                }
-            });
+    taskIds.forEach(taskId => {
+        const savedAnswer = localStorage.getItem(taskId);
+        if (savedAnswer) {
+            document.getElementById(taskId).value = savedAnswer;
+            const taskCard = document.getElementById(taskId + '-card');
+            const savedStatus = localStorage.getItem(taskId + '-card');
+            
+            // Применяем состояние правильности карточки
+            if (savedStatus === 'correct') {
+                taskCard.classList.add('correct');
+                taskCard.classList.remove('incorrect');
+            } else if (savedStatus === 'incorrect') {
+                taskCard.classList.add('incorrect');
+                taskCard.classList.remove('correct');
+            }
+        }
+    });
 
     const miniTaskIds = ['mini-task1', 'mini-task2', 'mini-task3'];
     miniTaskIds.forEach(taskId => {
@@ -274,6 +276,7 @@ window.onload = function() {
         if (savedAnswer) {
             inputField.value = savedAnswer;
 
+            // Применяем статус мини-задания
             if (savedStatus === 'correct') {
                 resultSpan.textContent = '✔️';
                 resultSpan.classList.add('correct-result');
@@ -292,7 +295,6 @@ window.onload = function() {
                 inputField.classList.remove('correct');
             }
         }
-        // checkIfAllMiniTasksCorrect();
     });
 };
 
