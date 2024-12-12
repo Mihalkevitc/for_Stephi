@@ -326,6 +326,7 @@
             const classCard = taskCard.className;
             const resultSpan = document.getElementById(taskCardId + '-result');
 
+
             // Сохраняем введённый ответ в localStorage (Если это не пустая строка - пользователь должен что-то ввести!)
             if(userAnswer != ''){
                 localStorage.setItem(taskId, userAnswer);
@@ -334,22 +335,23 @@
 
             // Проверка правильности ответа
             if (userAnswer === correctAnswer) {
-                taskCard.classList.add('correct');
                 taskCard.classList.remove('incorrect');
-                if (classCard === 'mini-task') {
+                taskCard.classList.add('correct');
+
+                if (resultSpan) {
                     resultSpan.textContent = '✔️';
-                    resultSpan.classList.add('correct-result');
-                    resultSpan.classList.remove('incorrect-result');
                 }
+
             } else {
                 taskCard.classList.remove('correct');
                 taskCard.classList.add('incorrect');
-                if (classCard === 'mini-task') {
+
+                if (resultSpan) {
                     resultSpan.textContent = '❌';
-                    resultSpan.classList.add('incorrect-result');
-                    resultSpan.classList.remove('correct-result');
                 }
+
             }
+
         }
 
         // Привязка событий к кнопкам
