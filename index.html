@@ -323,15 +323,20 @@
         function checkAnswer(taskId, correctAnswer, taskCardId) {
             const userAnswer = document.getElementById(taskId).value.trim();
             const taskCard = document.getElementById(taskCardId);
+
+            if (userAnswer == ''){
+                taskCard.classList.remove('incorrect');
+                taskCard.classList.remove('correct');
+                return;
+            }
+
             const classCard = taskCard.className;
             const resultSpan = document.getElementById(taskCardId + '-result');
 
 
             // Сохраняем введённый ответ в localStorage (Если это не пустая строка - пользователь должен что-то ввести!)
-            if(userAnswer != ''){
                 localStorage.setItem(taskId, userAnswer);
                 localStorage.setItem(taskId + '-correct', correctAnswer);
-            }
 
             // Проверка правильности ответа
             if (userAnswer === correctAnswer) {
@@ -368,7 +373,7 @@
             const tasks = ['task1', 'task2', 'task3', 'mini-task1-input', 'mini-task2-input', 'mini-task3-input'];
             tasks.forEach(taskId => {
                 const savedAnswer = localStorage.getItem(taskId);
-                if (savedAnswer && savedAnswer != '') {
+                if (savedAnswer) {
                     document.getElementById(taskId).value = savedAnswer;
                 }
             });
