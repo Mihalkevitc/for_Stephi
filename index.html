@@ -4,229 +4,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Математические Задания - 7 класс</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 30px 20px;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        h1 {
-            font-size: 2rem;
-            color: #2c3e50;
-        }
-
-        p {
-            font-size: 1.1rem;
-            color: #7f8c8d;
-        }
-
-        .mini-task p {
-            margin-top: 3px;
-            margin-bottom: 3px;
-        }
-
-        .theory {
-            margin-bottom: 30px;
-            padding: 20px;
-            background-color: #ede3fd;
-            border: 7px dotted #fafafa;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .theory h3 {
-            display: inline-block;
-            color: #6964f6;
-            margin-bottom: 0;
-        }
-
-        .tasks {
-            margin: 0;
-            padding: 0;
-        }
-
-        .task {
-            margin-bottom: 30px;
-            padding: 20px;
-            background-color: #ffffff;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .mini-task {
-            margin-bottom: 20px;
-            padding: 15px;
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .task h2 {
-            font-size: 1.5rem;
-            color: #2c3e50;
-        }
-
-        input[type="text"] {
-            padding: 12px;
-            width: 85%;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
-
-        .mini-task input {
-            padding: 8px;
-            width: 75%;
-        }
-
-        button {
-            padding: 12px 24px;
-
-            margin-top: 10px;
-            background-color: #6964f6;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background-color 0.3s ease;
-        }
-
-        .note {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        /* для верных карточек */
-
-        .correct {
-            background-color: #a3f79c;
-            box-shadow: 0 0 15px rgba(85, 200, 85, 0.3);
-        }
-
-        .correct p {
-            color: #ffffff;
-        }
-
-        .mini-task.correct
-        {
-            color: #7f8c8d;
-            background-color: #ffffff;
-        }
-
-        .mini-task.correct input{
-            background-color: #a3f79c;
-            box-shadow: 0 0 15px rgba(85, 200, 85, 0.3);
-        }
-        
-        .mini-task.correct  p{
-            color: #7f8c8d;
-        }
-
-
-        /* для неверных карточек */
-
-        .incorrect {
-            background-color: #f88686;
-            box-shadow: 0 0 15px rgba(231, 76, 60, 0.3);
-        }
-
-        .mini-task.incorrect
-        {
-            background-color: #ffffff;
-        }
-
-        .mini-task.incorrect input{
-            background-color: #f88686;
-            box-shadow: 0 0 15px rgba(231, 76, 60, 0.3);
-        }
-
-        .incorrect p{
-            color: rgb(255, 255, 255);
-        }
-
-        .mini-task.incorrect p {
-            color: #7f8c8d;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                width: 90%;
-                padding: 20px;
-            }
-
-            h1 {
-                font-size: 1.8rem;
-            }
-
-            .task h2 {
-                font-size: 1.3rem;
-            }
-
-            .mini-task input {
-                padding: 8px;
-                width: 65%;
-            }
-
-            .mini-task button {
-                font-size: 0.9rem;
-            }
-        }
-    </style>
+    <style src="style.css></style>
 </head>
 <body>
 
 <div class="container">
 
     <header>
-        <h1>Математика для 7 класса: Степени и Многочлены</h1>
-        <p>Потренируйся решать задания, и ты станешь настоящим математическим чемпионом!</p>
+        <h1>Математика 7 класса: Степени и Многочлены</h1>
+        <p>Потренируйся решать задания, и ты станешь настоящим математическим чемпионом, Стефи!</p>
     </header>
 
 
     <!-- Теоретические карточки -->
     <section class="theory">
         <h1>Возведение в степень</h1>
-        <p><h3>Возведение в степень</h3> — это операция, когда число (основание) умножается само на себя несколько раз. Это записывается как <em>a<sup>n</sup></em>, где:</p>
+        <p><h3>Возведение в степень</h3> — это операция, когда число (основание) умножается само на себя несколько раз. Это записывается как \( a^n \), где:</p>
         <ul>
             <li><strong>a</strong> — основание степени;</li>
             <li><strong>n</strong> — показатель степени.</li>
         </ul>
         <p><strong><h3>Основные правила:</h3></strong></p>
         <ul>
-            <li><h2>a<sup>m</sup> × a<sup>n</sup> = a<sup>m+n</sup></h2></li>
-            <li><h2>(a<sup>m</sup>)<sup>n</sup> = a<sup>m×n</sup></h2></li>
-            <li><h2>a<sup>m</sup> ÷ a<sup>n</sup> = a<sup>m−n</sup></h2></li>
-            <li><h2>a<sup>0</sup> = 1 (если a ≠ 0) </h2></li> 
-            <li><h2>a<sup>−n</sup> = 1/a<sup>n</sup></h2></li>
+            <li><h2>\( a^m \times a^n = a^{m+n} \)</h2></li>
+            <li><h2>\( (a^m)^n = a^{m \times n} \)</h2></li>
+            <li><h2>\( a^m \div a^n = a^{m-n} \)</h2></li>
+            <li><h2>\( a^0 = 1 \) (если \( a \neq 0 \))</h2></li>
+            <li><h2>\( a^{-n} = \frac{1}{a^n} \)</h2></li>
         </ul>
-        <p><strong>Пример:</strong> 2<sup>3</sup> = 2 × 2 × 2 = 8</p>
+        <p><strong>Пример:</strong> \( 2^3 = 2 \times 2 \times 2 = 8 \)</p>
         <p><strong><h3>Особенности:</h3></strong></p>
         <ul>
-            <li><strong>1 в степени:</strong> 1<sup>n</sup> = 1 для любого n</li>
-            <li><strong>0 в степени:</strong> 0<sup>n</sup> = 0 для любого положительного n</li>
-            <li><strong>Отрицательные показатели:</strong> a<sup>−n</sup> = 1/a<sup>n</sup>, если a ≠ 0</li>
+            <li><strong>1 в степени:</strong> \( 1^n = 1 \) для любого \( n \)</li>
+            <li><strong>0 в степени:</strong> \( 0^n = 0 \) для любого положительного \( n \)</li>
+            <li><strong>Отрицательные показатели:</strong> \( a^{-n} = \frac{1}{a^n} \), если \( a \neq 0 \)</li>
         </ul>
     </section>
     
+    
+    <section class="tasks">
+                <!-- Карточка с несколькими маленькими примерами -->
+        <div class="task" id="mini-task-card">
+            <h2>Задания на практику: Степени</h2>
+
+            <!-- Пример 11 -->
+            <div class="mini-task" id="mini-task11">
+                <p>$$2^3 \cdot 2^4 = $$</p>
+                <input type="text" id="mini-task11-input" placeholder="Введите ответ" />
+                <button class="check-button" id="check-mini-task11">Проверить</button>
+                <span class="mini-task-result" id="mini-task11-result"></span>
+            </div>
+
+            <!-- Пример 12 -->
+            <div class="mini-task" id="mini-task12">
+                <p>$$ (3x^2) \cdot (x^4) = $$</p>
+                <input type="text" id="mini-task12-input" placeholder="Введите ответ" />
+                <button class="check-button" id="check-mini-task12">Проверить</button>
+                <span class="mini-task-result" id="mini-task12-result"></span>
+            </div>
+
+            <!-- Пример 13 -->
+            <div class="mini-task" id="mini-task13">
+                <p>$$ \frac{5x^3}{x^2} = $$</p>
+                <input type="text" id="mini-task13-input" placeholder="Введите ответ" />
+                <button class="check-button" id="check-mini-task13">Проверить</button>
+                <span class="mini-task-result" id="mini-task13-result"></span>
+            </div>
+
+            <!-- Пример 14 -->
+            <div class="mini-task" id="mini-task14">
+                <p>$$ (x^5)^2 = $$</p>
+                <input type="text" id="mini-task14-input" placeholder="Введите ответ" />
+                <button class="check-button" id="check-mini-task14">Проверить</button>
+                <span class="mini-task-result" id="mini-task14-result"></span>
+            </div>
+
+            <!-- Пример 15 -->
+            <div class="mini-task" id="mini-task15">
+                <p>$$ (2x^4) \cdot (3x^2) = $$</p>
+                <input type="text" id="mini-task15-input" placeholder="Введите ответ" />
+                <button class="check-button" id="check-mini-task15">Проверить</button>
+                <span class="mini-task-result" id="mini-task15-result"></span>
+            </div>
+
+            <!-- Пример 16 -->
+            <div class="mini-task" id="mini-task16">
+                <p>$$ \frac{(x^3 \cdot y^2)}{(x^2 \cdot y)} = $$</p>
+                <input type="text" id="mini-task16-input" placeholder="Введите ответ" />
+                <button class="check-button" id="check-mini-task16">Проверить</button>
+                <span class="mini-task-result" id="mini-task16-result"></span>
+            </div>
+
+            <!-- Пример 17 -->
+            <div class="mini-task" id="mini-task17">
+                <p>$$ (2x^3)^2 = $$</p>
+                <input type="text" id="mini-task17-input" placeholder="Введите ответ" />
+                <button class="check-button" id="check-mini-task17">Проверить</button>
+                <span class="mini-task-result" id="mini-task17-result"></span>
+            </div>
+
+            <!-- Пример 18 -->
+            <div class="mini-task" id="mini-task18">
+                <p>$$ \frac{(x^2 \cdot y^3)}{(x^4 \cdot y)} = $$</p>
+                <input type="text" id="mini-task18-input" placeholder="Введите ответ" />
+                <button class="check-button" id="check-mini-task18">Проверить</button>
+                <span class="mini-task-result" id="mini-task18-result"></span>
+            </div>
+
+            <!-- Пример 19 -->
+            <div class="mini-task" id="mini-task19">
+                <p>$$ 4x^5 \cdot 3x^3 = $$</p>
+                <input type="text" id="mini-task19-input" placeholder="Введите ответ" />
+                <button class="check-button" id="check-mini-task19">Проверить</button>
+                <span class="mini-task-result" id="mini-task19-result"></span>
+            </div>
+
+            <!-- Пример 20 -->
+            <div class="mini-task" id="mini-task20">
+                <p>$$ \frac{(2x^3 \cdot 5x^2)}{x^4} = $$</p>
+                <input type="text" id="mini-task20-input" placeholder="Введите ответ" />
+                <button class="check-button" id="check-mini-task20">Проверить</button>
+                <span class="mini-task-result" id="mini-task20-result"></span>
+            </div>
+        </div>
+
+    </section>
+
     
 
     <section class="theory">
@@ -258,34 +161,18 @@
 
         <section class="tasks">
             <!-- Большие задания -->
-            <div class="task" id="task1-card">
-                <h2>Задание 1: Упростите выражение</h2>
-                <p>Упростите: 2<sup>3</sup> * 2<sup>4</sup></p>
-                <input type="text" id="task1" placeholder="Введите ответ" />
-                <button class="check-button" id="check-task1">Проверить</button>
-            </div>
-
-            <div class="task" id="task2-card">
-                <h2>Задание 2: Сложение многочленов</h2>
-                <p>Упростите выражение: (3x + 5) + (4x - 2)</p>
-                <input type="text" id="task2" placeholder="Введите ответ" />
-                <button class="check-button" id="check-task2">Проверить</button>
-            </div>
-
-            <div class="task" id="task3-card">
-                <h2>Задание 3: Вычитание многочленов</h2>
-                <p>Упростите выражение: (5x<sup>2</sup> + 3x - 1) - (2x<sup>2</sup> - 4x + 3)</p>
-                <input type="text" id="task3" placeholder="Введите ответ" />
-                <button class="check-button" id="check-task3">Проверить</button>
-            </div>
 
             <!-- Карточка с несколькими маленькими примерами -->
             <div class="task" id="mini-task-card">
-                <h2>Задания на практику: Упрощение</h2>
+                <h2>Задания на практику: Произведение одночлена на многочлен</h2>
+
+                <p>Ответы записываются как:
+                    <p>Пример: 3x * (2 + 5y - 10xy) = <br>Ответ: 6x + 15xy - 30x^2y</p>
+                </p>
 
                 <!-- Пример 1 -->
                 <div class="mini-task" id="mini-task1">
-                    <p>2<sup>2</sup> * 2<sup>3</sup> = </p>
+                    <p>3x * (2x + 4) = </p>
                     <input type="text" id="mini-task1-input" placeholder="Введите ответ" />
                     <button class="check-button" id="check-mini-task1">Проверить</button>
                     <span class="mini-task-result" id="mini-task1-result"></span>
@@ -293,7 +180,7 @@
 
                 <!-- Пример 2 -->
                 <div class="mini-task" id="mini-task2">
-                    <p>(4x + 1) + (2x - 3) = </p>
+                    <p>4a * (a + 3) = </p>
                     <input type="text" id="mini-task2-input" placeholder="Введите ответ" />
                     <button class="check-button" id="check-mini-task2">Проверить</button>
                     <span class="mini-task-result" id="mini-task2-result"></span>
@@ -301,102 +188,258 @@
 
                 <!-- Пример 3 -->
                 <div class="mini-task" id="mini-task3">
-                    <p>(x<sup>2</sup> + 3x - 1) - (x<sup>2</sup> - 4x + 5) = </p>
+                    <p>5y * (3y - 2) = </p>
                     <input type="text" id="mini-task3-input" placeholder="Введите ответ" />
                     <button class="check-button" id="check-mini-task3">Проверить</button>
                     <span class="mini-task-result" id="mini-task3-result"></span>
                 </div>
+
+                <!-- Пример 4 -->
+                <div class="mini-task" id="mini-task4">
+                    <p>2x * (x<sup>2</sup> + 5x - 3) = </p>
+                    <input type="text" id="mini-task4-input" placeholder="Введите ответ" />
+                    <button class="check-button" id="check-mini-task4">Проверить</button>
+                    <span class="mini-task-result" id="mini-task4-result"></span>
+                </div>
+
+                <!-- Пример 5 -->
+                <div class="mini-task" id="mini-task5">
+                    <p>-3m * (m - 4) = </p>
+                    <input type="text" id="mini-task5-input" placeholder="Введите ответ" />
+                    <button class="check-button" id="check-mini-task5">Проверить</button>
+                    <span class="mini-task-result" id="mini-task5-result"></span>
+                </div>
+
+                <!-- Пример 6 -->
+                <div class="mini-task" id="mini-task6">
+                    <p>6z * (z<sup>2</sup> + 2z + 1) = </p>
+                    <input type="text" id="mini-task6-input" placeholder="Введите ответ" />
+                    <button class="check-button" id="check-mini-task6">Проверить</button>
+                    <span class="mini-task-result" id="mini-task6-result"></span>
+                </div>
+
+                <!-- Пример 7 -->
+                <div class="mini-task" id="mini-task7">
+                    <p>-4p * (p<sup>2</sup> + 3p - 1) = </p>
+                    <input type="text" id="mini-task7-input" placeholder="Введите ответ" />
+                    <button class="check-button" id="check-mini-task7">Проверить</button>
+                    <span class="mini-task-result" id="mini-task7-result"></span>
+                </div>
+
+                <!-- Пример 8 -->
+                <div class="mini-task" id="mini-task8">
+                    <p>7x * (2x<sup>2</sup> + x - 4) = </p>
+                    <input type="text" id="mini-task8-input" placeholder="Введите ответ" />
+                    <button class="check-button" id="check-mini-task8">Проверить</button>
+                    <span class="mini-task-result" id="mini-task8-result"></span>
+                </div>
+
+                <!-- Пример 9 -->
+                <div class="mini-task" id="mini-task9">
+                    <p>-2a * (3a<sup>2</sup> + 5a - 2) = </p>
+                    <input type="text" id="mini-task9-input" placeholder="Введите ответ" />
+                    <button class="check-button" id="check-mini-task9">Проверить</button>
+                    <span class="mini-task-result" id="mini-task9-result"></span>
+                </div>
+
+                <!-- Пример 10 -->
+                <div class="mini-task" id="mini-task10">
+                    <p>8b * (b<sup>2</sup> - 4b + 6) = </p>
+                    <input type="text" id="mini-task10-input" placeholder="Введите ответ" />
+                    <button class="check-button" id="check-mini-task10">Проверить</button>
+                    <span class="mini-task-result" id="mini-task10-result"></span>
+                </div>
             </div>
+
+            <div class="task" id="task1-card">
+                <h2>Задание 1: Упростите выражение</h2>
+                <p>Упростите: 3x<sup>3</sup> * (2x<sup>4</sup> - 5x<sup>3</sup> + 4x<sup>2</sup> - x + 7)</p>
+                <input type="text" id="task1" placeholder="Введите ответ" />
+                <button class="check-button" id="check-task1">Проверить</button>
+            </div>
+            
+            <div class="task" id="task2-card">
+                <h2>Задание 2: Упростите выражение</h2>
+                <p>Упростите: -4y * (3y<sup>5</sup> - 2y<sup>4</sup> + y<sup>3</sup> - 7y<sup>2</sup> + 4y - 1)</p>
+                <input type="text" id="task2" placeholder="Введите ответ" />
+                <button class="check-button" id="check-task2">Проверить</button>
+            </div>
+
+            <div class="task" id="task3-card">
+                <h2>Задание 3: Найдите стороны треугольника</h2>
+                <p>Периметр треугольника 60 см. Одна из его сторон на 5 см больше другой, а третья сторона в 3 раза меньше самой длинной. Найдите стороны треугольника. (Ответ дайте в формате перечисления через запятую сторон треугольника, то есть: 1, 1, 1)</p>
+                <input type="text" id="task3" placeholder="Введите ответ" />
+                <button class="check-button" id="check-task3">Проверить</button>
+            </div>
+
+            <div class="task" id="task4-card">
+                <h2>Задание 4: Найдите расстояние</h2>
+                <p>Машина ехала по шоссе с постоянной скоростью. Сначала она двигалась 4 часа со скоростью 60 км/ч, а затем ещё 3 часа со скоростью 80 км/ч. Сколько километров проехала машина?</p>
+                <input type="text" id="task4" placeholder="Введите ответ" />
+                <button class="check-button" id="check-task4">Проверить</button>
+            </div>
+
+            
+            <div class="task" id="task5-card">
+                <h2>Задание 5: Найдите расстояние</h2>
+                <p>Туристы шли в поход со скоростью 5 км/ч, а возвращались со скоростью 4 км/ч. Затратив на обратный путь на 1 час больше, чем на первый. Каково расстояние между начальной и конечной точкой?</p>
+                <input type="text" id="task5" placeholder="Введите ответ" />
+                <button class="check-button" id="check-task5">Проверить</button>
+            </div>
+            
+            
+
         </section>
 
+        <section class="theory">
+            <h1>Вынесение общего множителя за скобку</h1>
+            <p><h3>Вынесение общего множителя за скобку</h3> — это метод, используемый в алгебре для упрощения выражений, в котором общий множитель всех членов выражения выносится за скобки.</p>
+            <p>Когда у нас есть выражение, состоящее из нескольких слагаемых, и все эти слагаемые имеют общий множитель, мы можем вынести его за скобку, что помогает упростить выражение. Например:</p>
+            <ul>
+                <li><strong>Пример:</strong> \( 3x + 6y = 3(x + 2y) \)</li>
+            </ul>
+        
+            <p><strong><h3>Основные шаги для вынесения общего множителя:</h3></strong></p>
+            <ul>
+                <li>Найдите наибольший общий множитель всех чисел в выражении (например, числовой коэффициент или переменные).</li>
+                <li>Вынесите этот множитель за скобку.</li>
+                <li>После того как множитель вынесен, оставшееся выражение будет в скобках.</li>
+            </ul>
+            
+            <p><strong><h3>Пример 1:</h3></strong></p>
+            <ul>
+                <li>Для выражения \( 4x + 8 \), общий множитель — это 4, так что можно записать его как \( 4(x + 2) \).</li>
+            </ul>
+            
+            <p><strong><h3>Пример 2:</h3></strong></p>
+            <ul>
+                <li>Для выражения \( 6a + 9b - 15 \), общий множитель — это 3, так что можно записать его как \( 3(2a + 3b - 5) \).</li>
+            </ul>
+            
+            <p><strong><h3>Основные правила:</h3></strong></p>
+            <ul>
+                <li><h2>\( a \cdot (b + c) = a \cdot b + a \cdot c \)</h2> — Распределительное свойство умножения относительно сложения.</li>
+                <li><h2>\( ab + ac = a(b + c) \)</h2> — Вынос общего множителя \( a \) за скобку.</li>
+            </ul>
+        
+            <p><strong><h3>Особенности:</h3></strong></p>
+            <ul>
+                <li><strong>Общий множитель:</strong> Все слагаемые должны иметь общий множитель, иначе вынести его не получится.</li>
+            </ul>
+        </section>
+
+
+                <!-- Карточка с несколькими маленькими примерами -->
+        <div class="task" id="mini-task-card">
+            <h2>Задания на практику: Вынесение общего множителя за скобку</h2>
+
+            <p>Ответы записываются как:
+                <p>Пример: 3x<sup>2</sup> + 6x = <br>Ответ: 3x * (x + 2)</p>
+
+                <p>Если ответ в виде многочлена запишите так: <br>2xy^3z - 15b + 1</p>
+            </p>
+
+            <!-- Пример 21 -->
+            <div class="mini-task" id="mini-task21">
+                <p>2x + 4 = </p>
+                <input type="text" id="mini-task21-input" placeholder="Введите ответ" />
+                <button class="check-button" id="check-mini-task21">Проверить</button>
+                <span class="mini-task-result" id="mini-task21-result"></span>
+            </div>
+
+            <!-- Пример 22 -->
+            <div class="mini-task" id="mini-task22">
+                <p>3x + 6x = </p>
+                <input type="text" id="mini-task22-input" placeholder="Введите ответ" />
+                <button class="check-button" id="check-mini-task22">Проверить</button>
+                <span class="mini-task-result" id="mini-task22-result"></span>
+            </div>
+
+            <!-- Пример 23 -->
+            <div class="mini-task" id="mini-task23">
+                <p>5x + 10 = </p>
+                <input type="text" id="mini-task23-input" placeholder="Введите ответ" />
+                <button class="check-button" id="check-mini-task23">Проверить</button>
+                <span class="mini-task-result" id="mini-task23-result"></span>
+            </div>
+
+            <!-- Пример 24 -->
+            <div class="mini-task" id="mini-task24">
+                <p>2x + 6y = </p>
+                <input type="text" id="mini-task24-input" placeholder="Введите ответ" />
+                <button class="check-button" id="check-mini-task24">Проверить</button>
+                <span class="mini-task-result" id="mini-task24-result"></span>
+            </div>
+
+            <!-- Пример 25 -->
+            <div class="mini-task" id="mini-task25">
+                <p>4x<sup>2</sup> + 8x = </p>
+                <input type="text" id="mini-task25-input" placeholder="Введите ответ" />
+                <button class="check-button" id="check-mini-task25">Проверить</button>
+                <span class="mini-task-result" id="mini-task25-result"></span>
+            </div>
+
+            <!-- Пример 26 -->
+            <div class="mini-task" id="mini-task26">
+                <p>6x<sup>3</sup> + 9x<sup>2</sup> = </p>
+                <input type="text" id="mini-task26-input" placeholder="Введите ответ" />
+                <button class="check-button" id="check-mini-task26">Проверить</button>
+                <span class="mini-task-result" id="mini-task26-result"></span>
+            </div>
+
+            <!-- Пример 27 -->
+            <div class="mini-task" id="mini-task27">
+                <p>3a + 9b = </p>
+                <input type="text" id="mini-task27-input" placeholder="Введите ответ" />
+                <button class="check-button" id="check-mini-task27">Проверить</button>
+                <span class="mini-task-result" id="mini-task27-result"></span>
+            </div>
+
+            <!-- Пример 28 -->
+            <div class="mini-task" id="mini-task28">
+                <p>2x<sup>2</sup> + 4x = </p>
+                <input type="text" id="mini-task28-input" placeholder="Введите ответ" />
+                <button class="check-button" id="check-mini-task28">Проверить</button>
+                <span class="mini-task-result" id="mini-task28-result"></span>
+            </div>
+
+            <!-- Пример 29 -->
+            <div class="mini-task" id="mini-task29">
+                <p>6x<sup>2</sup> + 12x - 18 = </p>
+                <input type="text" id="mini-task29-input" placeholder="Введите ответ" />
+                <button class="check-button" id="check-mini-task29">Проверить</button>
+                <span class="mini-task-result" id="mini-task29-result"></span>
+            </div>
+
+            <!-- Пример 30 -->
+            <div class="mini-task" id="mini-task30">
+                <p>5x<sup>3</sup> + 15x<sup>2</sup> - 10x = </p>
+                <input type="text" id="mini-task30-input" placeholder="Введите ответ" />
+                <button class="check-button" id="check-mini-task30">Проверить</button>
+                <span class="mini-task-result" id="mini-task30-result"></span>
+            </div>
+
+            <!-- Пример 31 -->
+            <div class="mini-task" id="mini-task31">
+                <p>-3b(b - 2) + 7(b - 2)<sup>2</sup> = </p>
+                <input type="text" id="mini-task31-input" placeholder="Введите ответ" />
+                <button class="check-button" id="check-mini-task31">Проверить</button>
+                <span class="mini-task-result" id="mini-task31-result"></span>
+            </div>
+        </div>
+
+        
 
     </div>
 
     <div class="note">
-        <p>Задание для Стефи!</p>
+        <p>Стефи, молодец!</p>
         <hr>
         <p><strong>© Михалькевич Влад</strong> 2024</p>
     </div>
 
-    <script>
-        // Функция для проверки ответа на конкретное задание
-        function checkAnswer(taskId, correctAnswer, taskCardId) {
-            const userAnswer = document.getElementById(taskId).value.trim();
-            const taskCard = document.getElementById(taskCardId);
+    <script src="script.js"></script>
 
-            if (userAnswer == ''){
-                taskCard.classList.remove('incorrect');
-                taskCard.classList.remove('correct');
-                return;
-            }
-
-            const classCard = taskCard.className;
-            const resultSpan = document.getElementById(taskCardId + '-result');
-
-
-            // Сохраняем введённый ответ в localStorage (Если это не пустая строка - пользователь должен что-то ввести!)
-                localStorage.setItem(taskId, userAnswer);
-                localStorage.setItem(taskId + '-correct', correctAnswer);
-
-            // Проверка правильности ответа
-            if (userAnswer === correctAnswer) {
-                taskCard.classList.remove('incorrect');
-                taskCard.classList.add('correct');
-
-                if (resultSpan) {
-                    resultSpan.textContent = '✔️';
-                }
-
-            } else {
-                taskCard.classList.remove('correct');
-                taskCard.classList.add('incorrect');
-
-                if (resultSpan) {
-                    resultSpan.textContent = '❌';
-                }
-
-            }
-
-        }
-
-        // Привязка событий к кнопкам
-        document.getElementById("check-task1").addEventListener("click", () => checkAnswer('task1', '128', 'task1-card'));
-        document.getElementById("check-task2").addEventListener("click", () => checkAnswer('task2', '7x + 3', 'task2-card'));
-        document.getElementById("check-task3").addEventListener("click", () => checkAnswer('task3', '3x^2 + 7x - 4', 'task3-card'));
-
-        document.getElementById("check-mini-task1").addEventListener("click", () => checkAnswer('mini-task1-input', '32', 'mini-task1'));
-        document.getElementById("check-mini-task2").addEventListener("click", () => checkAnswer('mini-task2-input', '6x - 2', 'mini-task2'));
-        document.getElementById("check-mini-task3").addEventListener("click", () => checkAnswer('mini-task3-input', '7x - 6', 'mini-task3'));
-
-        // Функция для загрузки предыдущих ответов из localStorage
-        function loadPreviousAnswers() {
-            const tasks = ['task1', 'task2', 'task3', 'mini-task1-input', 'mini-task2-input', 'mini-task3-input'];
-            tasks.forEach(taskId => {
-                const savedAnswer = localStorage.getItem(taskId);
-                if (savedAnswer) {
-                    document.getElementById(taskId).value = savedAnswer;
-                }
-            });
-        }
-
-        loadPreviousAnswers();
-
-        // Функция для проверки всех заданий при загрузке страницы
-        function checkAllAnswers() {
-            checkAnswer('task1', '128', 'task1-card');
-            checkAnswer('task2', '7x + 3', 'task2-card');
-            checkAnswer('task3', '3x^2 + 7x - 4', 'task3-card');
-            checkAnswer('mini-task1-input', '32', 'mini-task1');
-            checkAnswer('mini-task2-input', '6x - 2', 'mini-task2');
-            checkAnswer('mini-task3-input', '7x - 6', 'mini-task3');
-        }
-
-        // Загрузка предыдущих ответов при загрузке страницы и проверка
-
-        window.onload = function () {
-                loadPreviousAnswers();
-                checkAllAnswers(); // Проверка всех заданий после загрузки
-        };
-    </script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>
