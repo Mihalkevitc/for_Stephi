@@ -1,161 +1,185 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Математические Задания - 7 класс</title>
-    <style src="style.css></style>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <header>
-        <h1>Математика 7 класса: Степени и Многочлены</h1>
-        <p>Потренируйся решать задания, и ты станешь настоящим математическим чемпионом, Стефи!</p>
-    </header>
+        <header>
+            <h1>Математика 7 класса: Степени и Многочлены</h1>
+            <p>Потренируйся решать задания, и ты станешь настоящим математическим чемпионом, Стефи!</p>
+        </header>
 
 
-    <!-- Теоретические карточки -->
-    <section class="theory">
-        <h1>Возведение в степень</h1>
-        <p><h3>Возведение в степень</h3> — это операция, когда число (основание) умножается само на себя несколько раз. Это записывается как \( a^n \), где:</p>
-        <ul>
-            <li><strong>a</strong> — основание степени;</li>
-            <li><strong>n</strong> — показатель степени.</li>
-        </ul>
-        <p><strong><h3>Основные правила:</h3></strong></p>
-        <ul>
-            <li><h2>\( a^m \times a^n = a^{m+n} \)</h2></li>
-            <li><h2>\( (a^m)^n = a^{m \times n} \)</h2></li>
-            <li><h2>\( a^m \div a^n = a^{m-n} \)</h2></li>
-            <li><h2>\( a^0 = 1 \) (если \( a \neq 0 \))</h2></li>
-            <li><h2>\( a^{-n} = \frac{1}{a^n} \)</h2></li>
-        </ul>
-        <p><strong>Пример:</strong> \( 2^3 = 2 \times 2 \times 2 = 8 \)</p>
-        <p><strong><h3>Особенности:</h3></strong></p>
-        <ul>
-            <li><strong>1 в степени:</strong> \( 1^n = 1 \) для любого \( n \)</li>
-            <li><strong>0 в степени:</strong> \( 0^n = 0 \) для любого положительного \( n \)</li>
-            <li><strong>Отрицательные показатели:</strong> \( a^{-n} = \frac{1}{a^n} \), если \( a \neq 0 \)</li>
-        </ul>
-    </section>
-    
-    
-    <section class="tasks">
-                <!-- Карточка с несколькими маленькими примерами -->
-        <div class="task" id="mini-task-card">
-            <h2>Задания на практику: Степени</h2>
+        <!-- Теоретические карточки -->
+        <section class="theory">
+            <h1>Возведение в степень</h1>
+            <p>
+            <h3>Возведение в степень</h3> — это операция, когда число (основание) умножается само на себя несколько раз.
+            Это записывается как \( a^n \), где:</p>
+            <ul>
+                <li><strong>a</strong> — основание степени;</li>
+                <li><strong>n</strong> — показатель степени.</li>
+            </ul>
+            <p><strong>
+                    <h3>Основные правила:</h3>
+                </strong></p>
+            <ul>
+                <li>
+                    <h2>\( a^m \times a^n = a^{m+n} \)</h2>
+                </li>
+                <li>
+                    <h2>\( (a^m)^n = a^{m \times n} \)</h2>
+                </li>
+                <li>
+                    <h2>\( a^m \div a^n = a^{m-n} \)</h2>
+                </li>
+                <li>
+                    <h2>\( a^0 = 1 \) (если \( a \neq 0 \))</h2>
+                </li>
+                <li>
+                    <h2>\( a^{-n} = \frac{1}{a^n} \)</h2>
+                </li>
+            </ul>
+            <p><strong>Пример:</strong> \( 2^3 = 2 \times 2 \times 2 = 8 \)</p>
+            <p><strong>
+                    <h3>Особенности:</h3>
+                </strong></p>
+            <ul>
+                <li><strong>1 в степени:</strong> \( 1^n = 1 \) для любого \( n \)</li>
+                <li><strong>0 в степени:</strong> \( 0^n = 0 \) для любого положительного \( n \)</li>
+                <li><strong>Отрицательные показатели:</strong> \( a^{-n} = \frac{1}{a^n} \), если \( a \neq 0 \)</li>
+            </ul>
+        </section>
 
-            <!-- Пример 11 -->
-            <div class="mini-task" id="mini-task11">
-                <p>$$2^3 \cdot 2^4 = $$</p>
-                <input type="text" id="mini-task11-input" placeholder="Введите ответ" />
-                <button class="check-button" id="check-mini-task11">Проверить</button>
-                <span class="mini-task-result" id="mini-task11-result"></span>
+
+        <section class="tasks">
+            <!-- Карточка с несколькими маленькими примерами -->
+            <div class="task" id="mini-task-card">
+                <h2>Задания на практику: Степени</h2>
+
+                <!-- Пример 11 -->
+                <div class="mini-task" id="mini-task11">
+                    <p>$$2^3 \cdot 2^4 = $$</p>
+                    <input type="text" id="mini-task11-input" placeholder="Введите ответ" />
+                    <button class="check-button" id="check-mini-task11">Проверить</button>
+                    <span class="mini-task-result" id="mini-task11-result"></span>
+                </div>
+
+                <!-- Пример 12 -->
+                <div class="mini-task" id="mini-task12">
+                    <p>$$ (3x^2) \cdot (x^4) = $$</p>
+                    <input type="text" id="mini-task12-input" placeholder="Введите ответ" />
+                    <button class="check-button" id="check-mini-task12">Проверить</button>
+                    <span class="mini-task-result" id="mini-task12-result"></span>
+                </div>
+
+                <!-- Пример 13 -->
+                <div class="mini-task" id="mini-task13">
+                    <p>$$ \frac{5x^3}{x^2} = $$</p>
+                    <input type="text" id="mini-task13-input" placeholder="Введите ответ" />
+                    <button class="check-button" id="check-mini-task13">Проверить</button>
+                    <span class="mini-task-result" id="mini-task13-result"></span>
+                </div>
+
+                <!-- Пример 14 -->
+                <div class="mini-task" id="mini-task14">
+                    <p>$$ (x^5)^2 = $$</p>
+                    <input type="text" id="mini-task14-input" placeholder="Введите ответ" />
+                    <button class="check-button" id="check-mini-task14">Проверить</button>
+                    <span class="mini-task-result" id="mini-task14-result"></span>
+                </div>
+
+                <!-- Пример 15 -->
+                <div class="mini-task" id="mini-task15">
+                    <p>$$ (2x^4) \cdot (3x^2) = $$</p>
+                    <input type="text" id="mini-task15-input" placeholder="Введите ответ" />
+                    <button class="check-button" id="check-mini-task15">Проверить</button>
+                    <span class="mini-task-result" id="mini-task15-result"></span>
+                </div>
+
+                <!-- Пример 16 -->
+                <div class="mini-task" id="mini-task16">
+                    <p>$$ \frac{(x^3 \cdot y^2)}{(x^2 \cdot y)} = $$</p>
+                    <input type="text" id="mini-task16-input" placeholder="Введите ответ" />
+                    <button class="check-button" id="check-mini-task16">Проверить</button>
+                    <span class="mini-task-result" id="mini-task16-result"></span>
+                </div>
+
+                <!-- Пример 17 -->
+                <div class="mini-task" id="mini-task17">
+                    <p>$$ (2x^3)^2 = $$</p>
+                    <input type="text" id="mini-task17-input" placeholder="Введите ответ" />
+                    <button class="check-button" id="check-mini-task17">Проверить</button>
+                    <span class="mini-task-result" id="mini-task17-result"></span>
+                </div>
+
+                <!-- Пример 18 -->
+                <div class="mini-task" id="mini-task18">
+                    <p>$$ \frac{(x^2 \cdot y^3)}{(x^4 \cdot y)} = $$</p>
+                    <input type="text" id="mini-task18-input" placeholder="Введите ответ" />
+                    <button class="check-button" id="check-mini-task18">Проверить</button>
+                    <span class="mini-task-result" id="mini-task18-result"></span>
+                </div>
+
+                <!-- Пример 19 -->
+                <div class="mini-task" id="mini-task19">
+                    <p>$$ 4x^5 \cdot 3x^3 = $$</p>
+                    <input type="text" id="mini-task19-input" placeholder="Введите ответ" />
+                    <button class="check-button" id="check-mini-task19">Проверить</button>
+                    <span class="mini-task-result" id="mini-task19-result"></span>
+                </div>
+
+                <!-- Пример 20 -->
+                <div class="mini-task" id="mini-task20">
+                    <p>$$ \frac{(2x^3 \cdot 5x^2)}{x^4} = $$</p>
+                    <input type="text" id="mini-task20-input" placeholder="Введите ответ" />
+                    <button class="check-button" id="check-mini-task20">Проверить</button>
+                    <span class="mini-task-result" id="mini-task20-result"></span>
+                </div>
             </div>
 
-            <!-- Пример 12 -->
-            <div class="mini-task" id="mini-task12">
-                <p>$$ (3x^2) \cdot (x^4) = $$</p>
-                <input type="text" id="mini-task12-input" placeholder="Введите ответ" />
-                <button class="check-button" id="check-mini-task12">Проверить</button>
-                <span class="mini-task-result" id="mini-task12-result"></span>
-            </div>
-
-            <!-- Пример 13 -->
-            <div class="mini-task" id="mini-task13">
-                <p>$$ \frac{5x^3}{x^2} = $$</p>
-                <input type="text" id="mini-task13-input" placeholder="Введите ответ" />
-                <button class="check-button" id="check-mini-task13">Проверить</button>
-                <span class="mini-task-result" id="mini-task13-result"></span>
-            </div>
-
-            <!-- Пример 14 -->
-            <div class="mini-task" id="mini-task14">
-                <p>$$ (x^5)^2 = $$</p>
-                <input type="text" id="mini-task14-input" placeholder="Введите ответ" />
-                <button class="check-button" id="check-mini-task14">Проверить</button>
-                <span class="mini-task-result" id="mini-task14-result"></span>
-            </div>
-
-            <!-- Пример 15 -->
-            <div class="mini-task" id="mini-task15">
-                <p>$$ (2x^4) \cdot (3x^2) = $$</p>
-                <input type="text" id="mini-task15-input" placeholder="Введите ответ" />
-                <button class="check-button" id="check-mini-task15">Проверить</button>
-                <span class="mini-task-result" id="mini-task15-result"></span>
-            </div>
-
-            <!-- Пример 16 -->
-            <div class="mini-task" id="mini-task16">
-                <p>$$ \frac{(x^3 \cdot y^2)}{(x^2 \cdot y)} = $$</p>
-                <input type="text" id="mini-task16-input" placeholder="Введите ответ" />
-                <button class="check-button" id="check-mini-task16">Проверить</button>
-                <span class="mini-task-result" id="mini-task16-result"></span>
-            </div>
-
-            <!-- Пример 17 -->
-            <div class="mini-task" id="mini-task17">
-                <p>$$ (2x^3)^2 = $$</p>
-                <input type="text" id="mini-task17-input" placeholder="Введите ответ" />
-                <button class="check-button" id="check-mini-task17">Проверить</button>
-                <span class="mini-task-result" id="mini-task17-result"></span>
-            </div>
-
-            <!-- Пример 18 -->
-            <div class="mini-task" id="mini-task18">
-                <p>$$ \frac{(x^2 \cdot y^3)}{(x^4 \cdot y)} = $$</p>
-                <input type="text" id="mini-task18-input" placeholder="Введите ответ" />
-                <button class="check-button" id="check-mini-task18">Проверить</button>
-                <span class="mini-task-result" id="mini-task18-result"></span>
-            </div>
-
-            <!-- Пример 19 -->
-            <div class="mini-task" id="mini-task19">
-                <p>$$ 4x^5 \cdot 3x^3 = $$</p>
-                <input type="text" id="mini-task19-input" placeholder="Введите ответ" />
-                <button class="check-button" id="check-mini-task19">Проверить</button>
-                <span class="mini-task-result" id="mini-task19-result"></span>
-            </div>
-
-            <!-- Пример 20 -->
-            <div class="mini-task" id="mini-task20">
-                <p>$$ \frac{(2x^3 \cdot 5x^2)}{x^4} = $$</p>
-                <input type="text" id="mini-task20-input" placeholder="Введите ответ" />
-                <button class="check-button" id="check-mini-task20">Проверить</button>
-                <span class="mini-task-result" id="mini-task20-result"></span>
-            </div>
-        </div>
-
-    </section>
-
-    
-
-    <section class="theory">
-        <h1>Многочлены</h1>
-        <p><h3>Многочлен</h3> — это алгебраическое выражение, состоящее из переменных, коэффициентов и операций сложения, вычитания, умножения и возведения в степень.</p>
-        <p><strong>Пример:</strong> 3x<sup>2</sup> + 2x - 5</p>
-    
-        <p><strong><h3>Основные действия с многочленами:</h3></strong></p>
-        <ul>
-            <li><strong>Сложение:</strong> Складываем подобные слагаемые. <br>Пример: 
-                (3x<sup>2</sup> + 2x) + (4x<sup>2</sup> - x) = 3x<sup>2</sup> + 2x + 4x<sup>2</sup> - x = 7x<sup>2</sup> + x.
-            </li>
-            <li><strong>Вычитание:</strong> Вычитаем одноимённые слагаемые. <br>Пример: 
-                (5x<sup>2</sup> - 3x + y) - (2x<sup>2</sup> + x + y<sup>2</sup>) = 5x<sup>2</sup> - 3x + y - 2x<sup>2</sup> - x - y<sup>2</sup>= 3x<sup>2</sup> - 4x - y<sup>2</sup> + y
-            </li>
-            <li><strong>Умножение:</strong> Используем распределительный закон для умножения. Пример: 
-                (x + 3)(x - 2) = x<sup>2</sup> - 2x + 3x - 6 = x<sup>2</sup> + x - 6.
-            </li>
-        </ul>
-    </section>
-    
-
-</div>
+        </section>
 
 
-        <!-- Задания -->
+
+        <section class="theory">
+            <h1>Многочлены</h1>
+            <p>
+            <h3>Многочлен</h3> — это алгебраическое выражение, состоящее из переменных, коэффициентов и операций
+            сложения, вычитания, умножения и возведения в степень.</p>
+            <p><strong>Пример:</strong> 3x<sup>2</sup> + 2x - 5</p>
+
+            <p><strong>
+                    <h3>Основные действия с многочленами:</h3>
+                </strong></p>
+            <ul>
+                <li><strong>Сложение:</strong> Складываем подобные слагаемые. <br>Пример:
+                    (3x<sup>2</sup> + 2x) + (4x<sup>2</sup> - x) = 3x<sup>2</sup> + 2x + 4x<sup>2</sup> - x =
+                    7x<sup>2</sup> + x.
+                </li>
+                <li><strong>Вычитание:</strong> Вычитаем одноимённые слагаемые. <br>Пример:
+                    (5x<sup>2</sup> - 3x + y) - (2x<sup>2</sup> + x + y<sup>2</sup>) = 5x<sup>2</sup> - 3x + y -
+                    2x<sup>2</sup> - x - y<sup>2</sup>= 3x<sup>2</sup> - 4x - y<sup>2</sup> + y
+                </li>
+                <li><strong>Умножение:</strong> Используем распределительный закон для умножения. Пример:
+                    (x + 3)(x - 2) = x<sup>2</sup> - 2x + 3x - 6 = x<sup>2</sup> + x - 6.
+                </li>
+            </ul>
+        </section>
+
+
+    </div>
+
+
+    <!-- Задания -->
     <div class="container">
 
 
@@ -167,7 +191,7 @@
                 <h2>Задания на практику: Произведение одночлена на многочлен</h2>
 
                 <p>Ответы записываются как:
-                    <p>Пример: 3x * (2 + 5y - 10xy) = <br>Ответ: 6x + 15xy - 30x^2y</p>
+                <p>Пример: 3x * (2 + 5y - 10xy) = <br>Ответ: 6x + 15xy - 30x^2y</p>
                 </p>
 
                 <!-- Пример 1 -->
@@ -257,7 +281,7 @@
                 <input type="text" id="task1" placeholder="Введите ответ" />
                 <button class="check-button" id="check-task1">Проверить</button>
             </div>
-            
+
             <div class="task" id="task2-card">
                 <h2>Задание 2: Упростите выражение</h2>
                 <p>Упростите: -4y * (3y<sup>5</sup> - 2y<sup>4</sup> + y<sup>3</sup> - 7y<sup>2</sup> + 4y - 1)</p>
@@ -267,76 +291,102 @@
 
             <div class="task" id="task3-card">
                 <h2>Задание 3: Найдите стороны треугольника</h2>
-                <p>Периметр треугольника 60 см. Одна из его сторон на 5 см больше другой, а третья сторона в 3 раза меньше самой длинной. Найдите стороны треугольника. (Ответ дайте в формате перечисления через запятую сторон треугольника, то есть: 1, 1, 1)</p>
+                <p>Периметр треугольника 60 см. Одна из его сторон на 5 см больше другой, а третья сторона в 3 раза
+                    меньше самой длинной. Найдите стороны треугольника. (Ответ дайте в формате перечисления через
+                    запятую сторон треугольника, то есть: 1, 1, 1)</p>
                 <input type="text" id="task3" placeholder="Введите ответ" />
                 <button class="check-button" id="check-task3">Проверить</button>
             </div>
 
             <div class="task" id="task4-card">
                 <h2>Задание 4: Найдите расстояние</h2>
-                <p>Машина ехала по шоссе с постоянной скоростью. Сначала она двигалась 4 часа со скоростью 60 км/ч, а затем ещё 3 часа со скоростью 80 км/ч. Сколько километров проехала машина?</p>
+                <p>Машина ехала по шоссе с постоянной скоростью. Сначала она двигалась 4 часа со скоростью 60 км/ч, а
+                    затем ещё 3 часа со скоростью 80 км/ч. Сколько километров проехала машина?</p>
                 <input type="text" id="task4" placeholder="Введите ответ" />
                 <button class="check-button" id="check-task4">Проверить</button>
             </div>
 
-            
+
             <div class="task" id="task5-card">
                 <h2>Задание 5: Найдите расстояние</h2>
-                <p>Туристы шли в поход со скоростью 5 км/ч, а возвращались со скоростью 4 км/ч. Затратив на обратный путь на 1 час больше, чем на первый. Каково расстояние между начальной и конечной точкой?</p>
+                <p>Туристы шли в поход со скоростью 5 км/ч, а возвращались со скоростью 4 км/ч. Затратив на обратный
+                    путь на 1 час больше, чем на первый. Каково расстояние между начальной и конечной точкой?</p>
                 <input type="text" id="task5" placeholder="Введите ответ" />
                 <button class="check-button" id="check-task5">Проверить</button>
             </div>
-            
-            
+
+
 
         </section>
 
         <section class="theory">
             <h1>Вынесение общего множителя за скобку</h1>
-            <p><h3>Вынесение общего множителя за скобку</h3> — это метод, используемый в алгебре для упрощения выражений, в котором общий множитель всех членов выражения выносится за скобки.</p>
-            <p>Когда у нас есть выражение, состоящее из нескольких слагаемых, и все эти слагаемые имеют общий множитель, мы можем вынести его за скобку, что помогает упростить выражение. Например:</p>
+            <p>
+            <h3>Вынесение общего множителя за скобку</h3> — это метод, используемый в алгебре для упрощения выражений, в
+            котором общий множитель всех членов выражения выносится за скобки.</p>
+            <p>Когда у нас есть выражение, состоящее из нескольких слагаемых, и все эти слагаемые имеют общий множитель,
+                мы можем вынести его за скобку, что помогает упростить выражение. Например:</p>
             <ul>
                 <li><strong>Пример:</strong> \( 3x + 6y = 3(x + 2y) \)</li>
             </ul>
-        
-            <p><strong><h3>Основные шаги для вынесения общего множителя:</h3></strong></p>
+
+            <p><strong>
+                    <h3>Основные шаги для вынесения общего множителя:</h3>
+                </strong></p>
             <ul>
-                <li>Найдите наибольший общий множитель всех чисел в выражении (например, числовой коэффициент или переменные).</li>
+                <li>Найдите наибольший общий множитель всех чисел в выражении (например, числовой коэффициент или
+                    переменные).</li>
                 <li>Вынесите этот множитель за скобку.</li>
                 <li>После того как множитель вынесен, оставшееся выражение будет в скобках.</li>
             </ul>
-            
-            <p><strong><h3>Пример 1:</h3></strong></p>
+
+            <p><strong>
+                    <h3>Пример 1:</h3>
+                </strong></p>
             <ul>
-                <li>Для выражения \( 4x + 8 \), общий множитель — это 4, так что можно записать его как \( 4(x + 2) \).</li>
+                <li>Для выражения \( 4x + 8 \), общий множитель — это 4, так что можно записать его как \( 4(x + 2) \).
+                </li>
             </ul>
-            
-            <p><strong><h3>Пример 2:</h3></strong></p>
+
+            <p><strong>
+                    <h3>Пример 2:</h3>
+                </strong></p>
             <ul>
-                <li>Для выражения \( 6a + 9b - 15 \), общий множитель — это 3, так что можно записать его как \( 3(2a + 3b - 5) \).</li>
+                <li>Для выражения \( 6a + 9b - 15 \), общий множитель — это 3, так что можно записать его как \( 3(2a +
+                    3b - 5) \).</li>
             </ul>
-            
-            <p><strong><h3>Основные правила:</h3></strong></p>
+
+            <p><strong>
+                    <h3>Основные правила:</h3>
+                </strong></p>
             <ul>
-                <li><h2>\( a \cdot (b + c) = a \cdot b + a \cdot c \)</h2> — Распределительное свойство умножения относительно сложения.</li>
-                <li><h2>\( ab + ac = a(b + c) \)</h2> — Вынос общего множителя \( a \) за скобку.</li>
+                <li>
+                    <h2>\( a \cdot (b + c) = a \cdot b + a \cdot c \)</h2> — Распределительное свойство умножения
+                    относительно сложения.
+                </li>
+                <li>
+                    <h2>\( ab + ac = a(b + c) \)</h2> — Вынос общего множителя \( a \) за скобку.
+                </li>
             </ul>
-        
-            <p><strong><h3>Особенности:</h3></strong></p>
+
+            <p><strong>
+                    <h3>Особенности:</h3>
+                </strong></p>
             <ul>
-                <li><strong>Общий множитель:</strong> Все слагаемые должны иметь общий множитель, иначе вынести его не получится.</li>
+                <li><strong>Общий множитель:</strong> Все слагаемые должны иметь общий множитель, иначе вынести его не
+                    получится.</li>
             </ul>
         </section>
 
 
-                <!-- Карточка с несколькими маленькими примерами -->
+        <!-- Карточка с несколькими маленькими примерами -->
         <div class="task" id="mini-task-card">
             <h2>Задания на практику: Вынесение общего множителя за скобку</h2>
 
             <p>Ответы записываются как:
-                <p>Пример: 3x<sup>2</sup> + 6x = <br>Ответ: 3x * (x + 2)</p>
+            <p>Пример: 3x<sup>2</sup> + 6x = <br>Ответ: 3x * (x + 2)</p>
 
-                <p>Если ответ в виде многочлена запишите так: <br>2xy^3z - 15b + 1</p>
+            <p>Если ответ в виде многочлена запишите так: <br>2xy^3z - 15b + 1</p>
             </p>
 
             <!-- Пример 21 -->
@@ -428,7 +478,7 @@
             </div>
         </div>
 
-        
+
 
     </div>
 
@@ -440,6 +490,8 @@
 
     <script src="script.js"></script>
 
-<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
+
 </html>
